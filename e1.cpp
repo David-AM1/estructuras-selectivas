@@ -1,19 +1,25 @@
 #include <iostream>
+#include <windows.h>
 using namespace std;
 
+
 int main() {
+	SetConsoleOutputCP(CP_UTF8);
 	double nota1, nota2, nota3, promedio;
-	cout <<"Ingrese la primera calificacion: ";
+	do{
+	cout <<"Ingrese la primera calificación: ";
 	cin >> nota1;
-	cout << "Ingrese la segunda calificacion: ";
+	cout << "Ingrese la segunda calificación: ";
 	cin >> nota2;
-	cout << "Ingrese la tercera calificacion: ";
+	cout << "Ingrese la tercera calificación: ";
 	cin >> nota3;
+	cout<<endl;
+	}while(nota1<0 or nota2<=0 or nota3<0);
 	promedio = (nota1+nota2+nota3)/3;
 	if (promedio >= 70) {
-		cout <<"Su promedio es " << promedio << " esta " << "APROBADO";
+		cout <<"Su promedio es " << promedio << " está " << "APROBADO";
 	} else {
-		cout <<"Su promedio es " << promedio << " esta " << "REPROBADO";
+		cout <<"Su promedio es " << promedio << " está " << "REPROBADO";
 	}
 	return 0;
 }
