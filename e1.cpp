@@ -14,12 +14,15 @@ int main() {
 	cout << "Ingrese la tercera calificación: ";
 	cin >> nota3;
 	cout<<endl;
+	if(nota1<0 or nota2<=0 or nota3<0){
+		cout<<"INGRESE NUEVAMENTE LAS CALIFICACIONES (NO NEGATIVAS)."<<endl;
+	}
 	}while(nota1<0 or nota2<=0 or nota3<0);
 	promedio = (nota1+nota2+nota3)/3;
 	if (promedio >= 70) {
-		cout <<"Su promedio es " << promedio << " está " << "APROBADO";
+		cout <<"Su promedio es " << promedio << " , está " << "aprobado";
 	} else {
-		cout <<"Su promedio es " << promedio << " está " << "REPROBADO";
+		cout <<"Su promedio es " << promedio << " , está " << "reprobado";
 	}
 	return 0;
 }
