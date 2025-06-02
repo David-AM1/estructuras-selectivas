@@ -2,25 +2,31 @@
 using namespace std;
 
 int main () {
-	int edad;
-	double pulsaciones; 
+	double pulsaciones, edad; 
 	char genero;
-	cout << "Ingrese su edad: ";
-	cin >> edad;
-	cout << "Ingrese su genero (m/f): ";
-	cin >> genero;
-	switch(genero) {
+	do{
+		cout << "Ingrese su edad: ";
+		cin >> edad;
+		if(edad<=0){
+			cout<<"Intente nuevamente digitando una edad mayor a cero."<<endl;
+		}
+	}while(edad<=0);
+	do{
+		cout << "Ingrese su genero (m/f): ";
+		cin >> genero;
+		switch(genero) {
 		case 'm':
 			pulsaciones = (210 - edad) / 10;
-			cout << "El numero de puslsaciones es " << pulsaciones;
+			cout << "El numero de pulssaciones es " << pulsaciones;
 			break;
 		case 'f':
 			pulsaciones = (220 - edad) / 10;
 			cout << "El numero de pulsaciones es " << pulsaciones;
 			break;
 		default:
-			cout << "Error: Escriba en genero masculino o femenino (m/f).";
+			cout << "Error: Escriba en genero masculino (m) o femenino (f)."<<endl;
 			break;
-	}
+		}
+	}while(genero!='m' and genero!='f');
 	return 0;
 }
